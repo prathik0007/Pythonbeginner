@@ -1,15 +1,9 @@
-arr = list(map(int, input().split()))
+arr = [1, 2, 2, 3, 1, 4, 3]
 
-current_sum = 0
-maximum_sum = 0
+result = []
 
 for num in arr:
-    current_sum = current_sum + num
+    if num not in result:
+        result.append(num)
 
-    if current_sum < 0:
-        current_sum = 0
-
-    if current_sum > maximum_sum:
-        maximum_sum = current_sum
-
-print(maximum_sum)
+print(result)
