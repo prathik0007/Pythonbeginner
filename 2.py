@@ -1,16 +1,13 @@
-n, S = map(int, input().split())
-arr = list(map(int, input().split()))
+s = input("Enter a string: ")
 
-pairs = []
+max_count = 0
+max_char = ""
 
-for i in range(n):
-    for j in range(i + 1, n):
-        if arr[i] + arr[j] == S:
-            a = min(arr[i], arr[j])
-            b = max(arr[i], arr[j])
-            pairs.append([a, b])
+for ch in s:
+    count = s.count(ch)
 
-pairs.sort()
+    if count > max_count:
+        max_count = count
+        max_char = ch
 
-for pair in pairs:
-    print(pair[0], pair[1])
+print("Character with highest frequency:", max_char)
